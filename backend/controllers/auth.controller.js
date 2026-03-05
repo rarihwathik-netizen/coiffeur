@@ -59,7 +59,7 @@ export const getMe = async (req, res) => {
   try {
     const admin = await findAdminById(req.admin.id);
     if (!admin) {
-      return res.status(404).json({ message: "adminnon trouve" });
+      return res.status(404).json({ message: "admin non trouve" });
     }
     res.status(200).json({
       success: true,

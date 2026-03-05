@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dashboard Admin</title>
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+  <body>
+    <div class="dashboard">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <h3>Admin</h3>
+        <ul>
+          <a href=""><li>Log out</li></a>
+        </ul>
+      </aside>
+
+      <!-- Main -->
+      <main class="main-content">
+        <header class="topbar">
+          <h2>Dashboard</h2>
+        </header>
+
+        <section class="reservations">
+          <h3>Réservations</h3>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Date</th>
+                <th>Téléphone</th>
+                <th>Validation</th>
+              </tr>
+            </thead>
+
+            <tbody id="reservation-table">
+              <!-- Ici fetch va injecter les données -->
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
