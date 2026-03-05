@@ -65,7 +65,6 @@ export const deleteRdvController = async (req, res, next) => {
   try {
     const { id } = req.params;
 
-    // plus de validation ici, c'est dans validators
     await deleteRdv(id);
 
     console.log(`[DELETE] rdv ${id} supprimé`);
