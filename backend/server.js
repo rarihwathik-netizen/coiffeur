@@ -11,19 +11,22 @@ import { errorHandler } from "./middlewares/error.middleware.js";
 dotenv.config();
 
 // check required environment variables
-["DB_HOST","DB_USER","DB_PASSWORD","DB_NAME","JWT_SECRET"].forEach((key) => {
-  if (!process.env[key]) {
-    console.error(`env var ${key} is required`);
-    process.exit(1);
-  }
-});
+["DB_HOST", "DB_USER", "DB_PASSWORD", "DB_NAME", "JWT_SECRET"].forEach(
+  (key) => {
+    if (!process.env[key]) {
+      console.error(`env var ${key} is required`);
+      process.exit(1);
+    }
+  },
+);
 
 const app = express();
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 // security helpers
+const corsOrigin = process.env.CORS_ORIGIN || "https://moncoiffeur.netlify.app";
 app.use(helmet());
-app.use(cors({ origin: process.env.CORS_ORIGIN || '*' }));
+app.use(cors({ origin: corsOrigin }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
@@ -53,7 +56,7 @@ const startServer = async () => {
     await pool.query("SELECT 1");
     console.log("connexion DB ok");
 
-    app.listen(port, () => {
+    app.listen(PORT, () => {
       console.log("server demarrer");
     });
   } catch (error) {

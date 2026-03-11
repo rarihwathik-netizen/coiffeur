@@ -5,7 +5,7 @@ export const createAdmin = async (email, password) => {
     "INSERT INTO admin (email, password) VALUES (?, ?)",
     [email, password],
   );
-  return result;
+  return result.insertId;
 };
 
 const findAdminByEmail = async (email) => {

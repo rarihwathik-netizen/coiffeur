@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Base URL API — remplacer par l'URL de votre backend en production
+  const API_BASE = "https://VOTRE_BACKEND_URL"; // ex: https://api.moncoiffeur.com
+
   const menuBtn = document.getElementById("menu-btn");
   const sidebar = document.getElementById("sidebar");
   const closeBtn = document.getElementById("close");
@@ -29,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const password = document.getElementById("password").value;
 
       try {
-        const response = await fetch("http://localhost:3000/api/auth/login", {
+        const response = await fetch(`${API_BASE}/api/auth/login`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -63,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const date = document.getElementById("date").value;
 
       try {
-        const response = await fetch("http://localhost:3000/api/rdv", {
+        const response = await fetch(`${API_BASE}/api/rdv`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -96,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
     (async () => {
       const token = localStorage.getItem("adminToken");
       try {
-        const response = await fetch("http://localhost:3000/api/rdv", {
+        const response = await fetch(`${API_BASE}/api/rdv`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
