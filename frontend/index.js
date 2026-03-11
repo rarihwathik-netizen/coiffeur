@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Base URL API — remplacer par l'URL de votre backend en production
-  const API_BASE = "https://VOTRE_BACKEND_URL"; // ex: https://api.moncoiffeur.com
+  const API_BASE = "https://moncoiffeur.onrender.com"; // ex: https://api.moncoiffeur.com
 
   const menuBtn = document.getElementById("menu-btn");
   const sidebar = document.getElementById("sidebar");
